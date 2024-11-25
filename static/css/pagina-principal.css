@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'Barbra';
+    src: url('/static/fonts/barbra/Barbra-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Clear-Sans';
+    src: url('/static/fonts/clear-sans/') format('truetype');
+}
+
+.stack {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .stack > * {
+    position: absolute;
+    inset: 0;
+  }
+  
+  #header-video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  #header-gradiente {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.329) 1%, 
+    rgba(0, 0, 0, 0.329) 25%,
+    rgba(0, 0, 0, 0.329) 75%,
+    rgba(0, 0, 0, 0.329) 100% 
+    );
+  }
+  
+  #header-title {
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    padding: 4em;
+  }
+  
+  #logo-title {
+    width: auto;
+    height: 10em;
+  }
+  
+  #header-texto {
+    margin-left: 2em;
+  }
+  
+  #header-h1 {
+    font-size: 4.5em;
+    font-family: 'Barbra', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 0;
+  }
+  
+  #header-p {
+    font-size: 2em;
+    font-family: 'Clear-Sans', sans-serif;
+    color: #ffffff;
+    margin-top: 0;
+  }
