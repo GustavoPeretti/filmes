@@ -6,6 +6,7 @@ import os
 app = Flask(__name__)
 
 app.register_blueprint(home)
+app.register_blueprint(auth, url_prefix='/auth'home)
 app.register_blueprint(auth, url_prefix="/auth")
 
 app.secret_key = os.environ.get('SECRET_KEY')
