@@ -1,0 +1,2 @@
+FLASK_APP=filmes.py
+FLASK_ENV=development
