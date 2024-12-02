@@ -9,3 +9,8 @@ def cadastrar():
 @auth.route('/login')
 def login():
     return render_template('login.html')
+
+@auth.route('/conta')
+def conta():
+    return render_template('conta.html')
+
