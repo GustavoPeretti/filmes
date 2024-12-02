@@ -1,80 +1,191 @@
 @font-face {
-    font-family: 'Barbra';
-    src: url('/static/fonts/barbra/Barbra-Regular.ttf') format('truetype');
+  font-family: 'Barbra';
+  src: url('/static/fonts/barbra/Barbra-Regular.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Clear-Sans';
-    src: url('/static/fonts/clear-sans/') format('truetype');
+  font-family: 'Clear-Sans';
+  src: url('/static/fonts/clear-sans/') format('truetype');
+}
+
+article {
+  margin: 5em 8em 5em 8em;
+  font-family: 'Clear-Sans', sans-serif;
+}
+
+body {
+  margin: 0;
 }
 
 .stack {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-  }
-  
-  .stack > * {
-    position: absolute;
-    inset: 0;
-  }
-  
-  #header-video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    overflow: hidden;
-  }
-  
-  .background-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  #header-gradiente {
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    background: linear-gradient(135deg, 
-    rgba(0, 0, 0, 0.329) 1%, 
-    rgba(0, 0, 0, 0.329) 25%,
-    rgba(0, 0, 0, 0.329) 75%,
-    rgba(0, 0, 0, 0.329) 100% 
-    );
-  }
-  
-  #header-title {
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    width: 50%;
-    padding: 4em;
-  }
-  
-  #logo-title {
-    width: auto;
-    height: 10em;
-  }
-  
-  #header-texto {
-    margin-left: 2em;
-  }
-  
-  #header-h1 {
-    font-size: 4.5em;
-    font-family: 'Barbra', sans-serif;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 0;
-  }
-  
-  #header-p {
-    font-size: 2em;
-    font-family: 'Clear-Sans', sans-serif;
-    color: #ffffff;
-    margin-top: 0;
-  }
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.stack>* {
+  position: absolute;
+  inset: 0;
+}
+
+#header-video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#header-gradiente {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(135deg,
+      rgba(0, 0, 0, 0.329) 1%,
+      rgba(0, 0, 0, 0.329) 25%,
+      rgba(0, 0, 0, 0.329) 75%,
+      rgba(0, 0, 0, 0.329) 100%);
+}
+
+#header-title {
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  padding: 4em;
+}
+
+#logo-title {
+  width: auto;
+  height: 10em;
+}
+
+#header-texto {
+  margin-left: 2em;
+}
+
+#header-h1 {
+  font-size: 4.5em;
+  font-family: 'Barbra', sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0;
+}
+
+#header-p {
+  font-size: 2em;
+  font-family: 'Clear-Sans', sans-serif;
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.info-perfil {
+  width: 100%;
+  height: 1vh;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+#texto-info-perfil {
+  font-family: 'Clear-Sans', sans-serif;
+  font-size: 1.5em;
+}
+
+.foto-info-perfil {
+  border-radius: 50%;
+  width: 3em;
+  margin-left: 1em;
+}
+
+#titulo-lista-filmes{
+  display: flex;
+  align-items: center;
+}
+
+.lista-filmes {
+  margin-top: 2em;
+}
+
+.lista-filmes > div >img {
+  height: 2em;
+}
+
+.lista-filmes > div > p {
+  font-size: 1.5em;
+}
+
+#poster-lista-filmes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.poster-titulo > img{
+  width: 8em;
+  height: 12em;
+  border-radius: 7%;
+}
+
+.poster-titulo {
+  display: flex
+  ;
+      flex-direction: column;
+      align-items: center;
+}
+
+.ver {
+  background-color: #2e2e2e;
+  width: 8em;
+  height: 12em;
+  border-radius: 7%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.ver > p {
+  color: white;
+}
+
+.titulo-filme {
+  width: 8em;
+  text-align: center;
+}
+.nova-lista {
+  background-color: #2e2e2e;
+  width: 12em;
+  height: 3em;
+  font-family: 'Clear-Sans', sans-serif;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 0.2em 2em 0.2em 1em;
+}
+
+.nova-lista > img {
+  width: 2.5em;
+  margin-right: 0.5em;
+}
+
+.container-nova-lista {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5em;
+}
+
+button {
+  border: none;
+}
