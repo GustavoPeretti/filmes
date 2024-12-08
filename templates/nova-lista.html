@@ -1,11 +1,59 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova lista</title>
+    <link rel="stylesheet" href="/static/css/nova-lista.css">
 </head>
 <body>
-    
+    <div class="diagonal"></div>
+    <div class="container-principal">
+        <h1>Cadastro de lista</h1>
+        <form action="">
+            <input type="text" placeholder="Nome da lista" class="nome-da-lista">
+        </form>
+        <div class="lista-privada">
+            <label>Tornar lista privada</label>
+            <div class="toggle-switch">
+                <input type="checkbox" id="switch" />
+                <label for="switch"></label>
+            </div>
+        </div>
+
+        <div class="pesquisa-filmes">
+            <form action="">
+                <input type="text" placeholder="Pesquise o nome de uma produção" class="nome-da-lista" id="pesquisa-filmes">
+            </form>
+            <div class="lista-filmes">
+                <div id="poster-lista-filmes">
+                    <div class="poster-titulo">
+                        <input type="checkbox" id="poster1" />
+                        <label for="poster1">
+                            <img src="https://img.elo7.com.br/product/zoom/259A7AA/big-poster-filme-vingadores-ultimato-lo001-tamanho-90x60-cm-poster-marvel.jpg" alt="">
+                            <div class="titulo-filme"><p>Vingadores Ultimato</p></div>
+                        </label>
+                    </div>
+                    <div class="poster-titulo">
+                        <input type="checkbox" id="poster2" />
+                        <label for="poster2">
+                            <img src="https://img.elo7.com.br/product/zoom/259A7AA/big-poster-filme-vingadores-ultimato-lo001-tamanho-90x60-cm-poster-marvel.jpg" alt="">
+                            <div class="titulo-filme"><p>Vingadores Ultimato</p></div>
+                        </label>
+                    </div>
+                    <div class="poster-titulo">
+                        <input type="checkbox" id="poster3" />
+                        <label for="poster3">
+                            <img src="https://img.elo7.com.br/product/zoom/259A7AA/big-poster-filme-vingadores-ultimato-lo001-tamanho-90x60-cm-poster-marvel.jpg" alt="">
+                            <div class="titulo-filme"><p>Vingadores Ultimato</p></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="botao">
+            <button>Salvar</button>
+        </div>
+    </div>  
 </body>
 </html>

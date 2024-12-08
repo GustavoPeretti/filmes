@@ -1,0 +1,173 @@
+@font-face {
+  font-family: 'Barbra';
+  src: url('static/fonts/Barbra-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Clear-Sans';
+  src: url('static/fonts/ClearSans-Regular.ttf') format('truetype');
+}
+
+html {
+  background-color: black;
+  font-family: 'Clear-Sans', sans-serif;
+}
+
+.diagonal {
+  top: 0;
+  margin-top: 0;
+  width: 100%;
+  height: 60px; 
+  background: repeating-linear-gradient(
+      -45deg,      
+      black,    
+      black 15px, 
+      white 15px,   
+      white 30px      
+  );
+}
+
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 25px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-switch label {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 25px;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.3s;
+}
+
+.toggle-switch label::before {
+  content: "";
+  position: absolute;
+  background-color: #888;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  left: 2.5px;
+  top: 2.5px;
+  transition: transform 0.3s;
+}
+
+.toggle-switch input:checked + label {
+  background-color: #6ddb71;
+}
+
+.toggle-switch input:checked + label::before {
+  transform: translateX(25px);
+}
+
+label {
+  color: white;
+}
+
+h1 {
+  color: white;
+  font-family: 'Clear-Sans', sans-serif;
+}
+
+#titulo-lista-filmes {
+  display: flex;
+  align-items: center;
+}
+
+.lista-filmes {
+  margin-top: 2em;
+}
+
+#poster-lista-filmes {
+  display: flex;
+  justify-content: space-between;
+  gap: 5em;
+}
+
+.poster-titulo input {
+  display: none;
+}
+
+.poster-titulo label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 7%;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.poster-titulo label img {
+  width: 6em;
+  height: 10em;
+  border-radius: 7%;
+}
+
+.poster-titulo label:hover {
+  transform: scale(1.05);
+  border-color: #4caf50;
+}
+
+.poster-titulo input:checked + label {
+  border-color: #4caf50;
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.pesquisa-filmes {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nome-da-lista {
+  background-color: #dadada;
+  color: black;
+  border-radius: 10px;
+  border: none;
+  padding: 5px 2px 5px 20px;
+}
+
+.lista-privada {
+  display: flex;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+#pesquisa-filmes {
+  padding: 5px 2px 5px 20px;
+  width: 20em;
+}
+
+button {
+  background-color: #2e2e2e;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 0.8em 1.5em 0.8em 1.5em;
+  align-items: center;
+  cursor: pointer;
+}
+
+.botao {
+  display: flex;
+  align-items: center;
+  margin-top: 3em;
+  justify-content: center;
+}
