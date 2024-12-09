@@ -27,8 +27,8 @@
     </div>
     <article>
         <div class="info-perfil">
-            <p id="texto-info-perfil">Olá, Jorge!</p>
-            <img src="https://i.pinimg.com/736x/35/c2/83/35c2838e747ae32b1ed326fd4444f760.jpg" alt="" class="foto-info-perfil">
+            <p id="texto-info-perfil">Olá, {{session['usuario']['usuario']}}!</p>
+            <img src="https://i.pinimg.com/736x/a9/dd/80/a9dd804fbc37cd88768103e7cf657def.jpg" alt="" class="foto-info-perfil">
         </div>
 
         <div class="lista-filmes">
@@ -119,6 +119,6 @@
             <p>Nova lista</p>
         </button>
     </form>
+    <script src="/static/js/home.js"></script>
 </body>
-<script src="/static/js/login.js"></script>
 </html>

@@ -76,7 +76,7 @@ def verificar_codigo(codigo):
     
     usuario = usuario[0]
 
-    db.query('UPDATE usuarios SET verificado = true WHERE usuario = %s;', usuario['usuario'])
+    db.query('UPDATE usuarios SET verificado = true, codigo = %s WHERE usuario = %s;', str(uuid.uuid4()), usuario['usuario'])
     
     session['usuario'] = {
         'usuario': usuario['usuario'],

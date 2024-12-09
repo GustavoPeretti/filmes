@@ -6,30 +6,32 @@ USE filmoteca;
 
 CREATE TABLE usuarios (
 	usuario VARCHAR(255) PRIMARY KEY,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    senha CHAR(64) NOT NULL
+	email VARCHAR(255) NOT NULL UNIQUE,
+	senha CHAR(64) NOT NULL,
+	verificado BOOLEAN DEFAULT false,
+    codigo CHAR(36) NOT NULL UNIQUE
 );
 
 CREATE TABLE filmes (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    titulo VARCHAR(255) NOT NULL,
-    descricao VARCHAR(2000) NOT NULL,
-    imagem VARCHAR(255) NOT NULL
+	titulo VARCHAR(255) NOT NULL,
+	descricao VARCHAR(2000) NOT NULL,
+	imagem VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE listas (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    titulo VARCHAR(255) NOT NULL,
-    privado BOOLEAN DEFAULT false NOT NULL,
-    usuario VARCHAR(255) NOT NULL,
-    FOREIGN KEY (usuario) REFERENCES usuarios (usuario) ON UPDATE CASCADE ON DELETE CASCADE
+	titulo VARCHAR(255) NOT NULL,
+	privado BOOLEAN DEFAULT false NOT NULL,
+	usuario VARCHAR(255) NOT NULL,
+	FOREIGN KEY (usuario) REFERENCES usuarios (usuario) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE filmes_listas (
 	id_lista INT NOT NULL,
-    id_filme INT NOT NULL,
-    FOREIGN KEY (id_filme) REFERENCES filmes (id) ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY (id_filme) REFERENCES listas (id) ON UPDATE CASCADE ON DELETE CASCADE
+	id_filme INT NOT NULL,
+	FOREIGN KEY (id_lista) REFERENCES listas (id) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY (id_filme) REFERENCES filmes (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 INSERT INTO filmes (titulo, descricao, imagem) VALUES ("Toy Story", "A little boy named Andy loves to be in his room, playing with his toys, especially his doll named \"Woody\". But, what do the toys do when Andy is not with them, they come to life. Woody believes that his life (as a toy) is good. However, he must worry about Andy's family moving, and what Woody does not know is about Andy's birthday party. Woody does not realize that Andy's mother gave him an action figure known as Buzz Lightyear, who does not believe that he is a toy, and quickly becomes Andy's new favorite toy. Woody, who is now consumed with jealousy, tries to get rid of Buzz. Then, both Woody and Buzz are now lost. They must find a way to get back to Andy before he moves without them, but they will have to pass through a ruthless toy killer, Sid Phillips.", "https://m.media-amazon.com/images/M/MV5BZTA3OWVjOWItNjE1NS00NzZiLWE1MjgtZDZhMWI1ZTlkNzYwXkEyXkFqcGc@._V1_SX300.jpg");

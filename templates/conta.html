@@ -11,19 +11,19 @@
     <div class="container">
         <div>
             <img src="https://i.pinimg.com/736x/a9/dd/80/a9dd804fbc37cd88768103e7cf657def.jpg" alt="" id="foto-perfil">
-            <div class="nome-lapis"><p id="nome">Jorge</p><img src="/static/img/lapis.png" alt="" id="lapis-editar"></div>
+            <div class="nome-lapis"><p id="nome">{{ session['usuario']['usuario'] }}</p><img src="/static/img/lapis.png" alt="" id="lapis-editar"></div>
         </div>
         <form action="">
-            <input type="text" placeholder="jorgealbertomoreira@gmail.com" class="nome-da-lista" id="pesquisa-filmes">
+            <input disabled type="text" placeholder="{{ session['usuario']['email'] }} " class="nome-da-lista" id="pesquisa-filmes">
         </form>
 
         <div class="gerenciar-email">
             <p>Alterar e-mail</p>
             <form action="">
                 <p>Novo e-mail</p>
-                <input type="text" placeholder="jorgealbertomoreira@gmail.com" class="nome-da-lista" id="pesquisa-filmes">
+                <input type="text" placeholder="E-mail" class="nome-da-lista email-input" id="pesquisa-filmes">
                 <div class="botao">
-                    <button>Salvar</button>
+                    <button id="salvar-email">Salvar</button>
                 </div>
             </form>
         </div>
@@ -32,21 +32,23 @@
             <p>Alterar senha</p>
             <form action="">
                 <p>Nova senha</p>
-                <input type="text" placeholder="jorgealbertomoreira@gmail.com" class="nome-da-lista" id="pesquisa-filmes">
+                <input type="password" placeholder="Senha" class="nome-da-lista senha-input" id="pesquisa-filmes">
             </form>
 
             <form action="">
                 <p>Confirmar nova senha</p>
-                <input type="text" placeholder="jorgealbertomoreira@gmail.com" class="nome-da-lista" id="pesquisa-filmes">
+                <input type="password" placeholder="Senha" class="nome-da-lista senha-confirmar-input" id="pesquisa-filmes">
                 <div class="botao">
-                    <button>Salvar</button>
+                    <button id="salvar-senha">Salvar</button>
                 </div>
             </form>
         </div>
         <div class="botao">
-            <button>Salvar</button>
+            <button id="salvar-nome">Salvar</button>
             <button id="deletar"><img src="/static/img/lixeira.png" alt="" id="lixeira-deletar"> Deletar conta</button>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/static/js/conta.js"></script>
 </body>
 </html>
