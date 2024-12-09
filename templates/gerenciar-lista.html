@@ -9,79 +9,47 @@
 <body>
     <div class="diagonal"></div>
     <div class="container-principal">
-        <div class="titulo-icone"><h1>Favoritos</h1> <img src="/static/img/lapis.png" alt="" id="lapis-editar"></div> 
+        <div class="titulo-icone"><h1>{{ lista_especifica['titulo'] }}</h1> <img src="/static/img/lapis.png" alt="" id="lapis-editar"></div> 
         <div class="lista-privada">
             <label>Tornar lista privada</label>
             <div class="toggle-switch">
-                <input type="checkbox" id="switch" />
+                {% if lista_especifica['privado'] %}
+                    <input type="checkbox" id="switch" checked />
+                {% else %}
+                    <input type="checkbox" id="switch" />
+                {% endif %}
                 <label for="switch"></label>
             </div>
         </div>
 
         <div class="pesquisa-filmes">
-            <form action="">
-                <input type="text" placeholder="Pesquise o nome de uma produção" class="nome-da-lista" id="pesquisa-filmes">
-            </form>
             <div class="lista-filmes">
                 <div id="poster-lista-filmes">
-                    <div class="poster-titulo">
-                        <input type="checkbox" id="poster1" />
-                        <label for="poster1">
-                            <img src="https://img.elo7.com.br/product/zoom/259A7AA/big-poster-filme-vingadores-ultimato-lo001-tamanho-90x60-cm-poster-marvel.jpg" alt="">
-                            <div class="titulo-filme"><p>Vingadores Ultimato</p></div>
-                        </label>
-                    </div>
-                    <div class="poster-titulo">
-                        <input type="checkbox" id="poster2" />
-                        <label for="poster2">
-                            <img src="https://img.elo7.com.br/product/zoom/259A7AA/big-poster-filme-vingadores-ultimato-lo001-tamanho-90x60-cm-poster-marvel.jpg" alt="">
-                            <div class="titulo-filme"><p>Vingadores Ultimato</p></div>
-                        </label>
-                    </div>
-                    <div class="poster-titulo">
-                        <input type="checkbox" id="poster3" />
-                        <label for="poster3">
-                            <img src="https://img.elo7.com.br/product/zoom/259A7AA/big-poster-filme-vingadores-ultimato-lo001-tamanho-90x60-cm-poster-marvel.jpg" alt="">
-                            <div class="titulo-filme"><p>Vingadores Ultimato</p></div>
-                        </label>
-                    </div>
+                    {% for filme in filmes %}
+
+                        <div onclick="this.querySelector('input').checked = !this.querySelector('input').checked" class="poster-titulo filme-{{ filme['id'] }}">
+                            {% if filme['titulo'] in titulos %}
+                                <input type="checkbox" checked />
+                            {% else %}
+                                <input type="checkbox" />
+                            {% endif %}
+                            <label>
+                                <img src="{{ filme['imagem'] }}" alt="">
+                                <div class="titulo-filme"><p>{{ filme['titulo'] }}</p></div>
+                            </label>
+                        </div>
+
+                    {% endfor %}
                 </div>
-            </div>
-            <div class="botao">
-                <button>Adicionar</button>
             </div>
         </div>
 
-        <div class="gerenciar-filmes">
-            <div class="lista-filmes">
-                <div id="poster-lista-filmes">
-                    <div class="poster-titulo">
-                        <img src="https://img.elo7.com.br/product/zoom/259A7AA/big-poster-filme-vingadores-ultimato-lo001-tamanho-90x60-cm-poster-marvel.jpg" alt="">
-                        <div class="titulo-filme"><p>Vingadores Ultimato</p> <img src="/static/img/lixeira.png" alt="" id="lixeira-deletar"></div>
-                    </div>
-                    <div class="poster-titulo">
-                        <img src="https://img.elo7.com.br/product/zoom/259A7AA/big-poster-filme-vingadores-ultimato-lo001-tamanho-90x60-cm-poster-marvel.jpg" alt="">
-                        <div class="titulo-filme"><p>Vingadores Ultimato</p> <img src="/static/img/lixeira.png" alt="" id="lixeira-deletar"></div>
-                    </div>
-                    <div class="poster-titulo">
-                        <img src="https://img.elo7.com.br/product/zoom/259A7AA/big-poster-filme-vingadores-ultimato-lo001-tamanho-90x60-cm-poster-marvel.jpg" alt="">
-                        <div class="titulo-filme"><p>Vingadores Ultimato</p> <img src="/static/img/lixeira.png" alt="" id="lixeira-deletar"></div>
-                    </div>
-                    <div class="poster-titulo">
-                        <img src="https://img.elo7.com.br/product/zoom/259A7AA/big-poster-filme-vingadores-ultimato-lo001-tamanho-90x60-cm-poster-marvel.jpg" alt="">
-                        <div class="titulo-filme"><p>Vingadores Ultimato</p> <img src="/static/img/lixeira.png" alt="" id="lixeira-deletar"></div>
-                    </div>
-                    <div class="poster-titulo">
-                        <img src="https://img.elo7.com.br/product/zoom/259A7AA/big-poster-filme-vingadores-ultimato-lo001-tamanho-90x60-cm-poster-marvel.jpg" alt="">
-                        <div class="titulo-filme"><p>Vingadores Ultimato</p> <img src="/static/img/lixeira.png" alt="" id="lixeira-deletar"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="botao">
             <button>Salvar</button>
             <button id="deletar"><img src="/static/img/lixeira.png" alt="" id="lixeira-deletar"> Deletar lista</button>
         </div>
-    </div>  
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/static/js/gerenciar-lista.js"></script>
 </body>
 </html>

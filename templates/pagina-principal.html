@@ -21,7 +21,7 @@
         <div id="header-title">
             <div id="header-texto">
                 <h1 id="header-h1">Filmoteca</h1>
-                <p id="header-p">Lorem ipsum dolor sit amet consectetur adisciping elit</p>
+                <p id="header-p">Produções audiovisuais organizadas do seu jeitinho!</p>
             </div>    
         </div>
     </div>
@@ -31,86 +31,24 @@
             <img src="https://i.pinimg.com/736x/a9/dd/80/a9dd804fbc37cd88768103e7cf657def.jpg" alt="" class="foto-info-perfil">
         </div>
 
+        {% for lista in listas %}
+
         <div class="lista-filmes">
-            <div id="titulo-lista-filmes"><img src="/static/img/estrela.png" alt=""> <p>Favoritos</p></div>
+            <div id="titulo-lista-filmes"><img src="/static/img/estrela.png" alt=""> <p>{{ lista['titulo'] }}</p></div>
             <div id="poster-lista-filmes">
-                <div class="poster-titulo">
-                    <img src="https://img.elo7.com.br/product/zoom/259A7AA/big-poster-filme-vingadores-ultimato-lo001-tamanho-90x60-cm-poster-marvel.jpg" alt="">
-                    <div class="titulo-filme"><p>Vingadores Ultimato</p></div>
-                </div>
-                <div class="poster-titulo">
-                    <img src="https://img.elo7.com.br/product/zoom/259A7AA/big-poster-filme-vingadores-ultimato-lo001-tamanho-90x60-cm-poster-marvel.jpg" alt="">
-                    <div class="titulo-filme"><p>Vingadores Ultimato</p></div>
-                </div>
-                <div class="poster-titulo">
-                    <img src="https://img.elo7.com.br/product/zoom/259A7AA/big-poster-filme-vingadores-ultimato-lo001-tamanho-90x60-cm-poster-marvel.jpg" alt="">
-                    <div class="titulo-filme"><p>Vingadores Ultimato</p></div>
-                </div>
-                <div class="poster-titulo">
-                    <img src="https://img.elo7.com.br/product/zoom/259A7AA/big-poster-filme-vingadores-ultimato-lo001-tamanho-90x60-cm-poster-marvel.jpg" alt="">
-                    <div class="titulo-filme"><p>Vingadores Ultimato</p></div>
-                </div>
-                <div class="poster-titulo">
-                    <img src="https://img.elo7.com.br/product/zoom/259A7AA/big-poster-filme-vingadores-ultimato-lo001-tamanho-90x60-cm-poster-marvel.jpg" alt="">
-                    <div class="titulo-filme"><p>Vingadores Ultimato</p></div>
-                </div>
-                <div class="ver"><p>Ver "Favoritos"</p></div>
+                {% for filme in lista['filmes'] %}
+                    <div class="poster-titulo">
+                        <img src="{{ filme['imagem'] }}" alt="">
+                        <div class="titulo-filme"><p>{{ filme['titulo'] }}</p></div>
+                    </div>
+                {% endfor %}
+                <div class="ver" style="cursor: pointer;" onclick="window.location.href='/lista/{{ lista.id }}'"><p>Ver "{{ lista['titulo'] }}"</p></div>
             </div>
         </div>
 
-        <div class="lista-filmes">
-            <div id="titulo-lista-filmes"><img src="/static/img/estrela.png" alt=""> <p>Quero assistir</p></div>
-            <div id="poster-lista-filmes">
-                <div class="poster-titulo">
-                    <img src="https://uauposters.com.br/media/catalog/product/2/5/259420220222-uau-posters-the-batman-filmes-7.jpg" alt="">
-                    <div class="titulo-filme"><p>O Batman</p></div>
-                </div>
-                <div class="poster-titulo">
-                    <img src="https://uauposters.com.br/media/catalog/product/2/5/259420220222-uau-posters-the-batman-filmes-7.jpg" alt="">
-                    <div class="titulo-filme"><p>O Batman</p></div>
-                </div>
-                <div class="poster-titulo">
-                    <img src="https://uauposters.com.br/media/catalog/product/2/5/259420220222-uau-posters-the-batman-filmes-7.jpg" alt="">
-                    <div class="titulo-filme"><p>O Batman</p></div>
-                </div>
-                <div class="poster-titulo">
-                    <img src="https://uauposters.com.br/media/catalog/product/2/5/259420220222-uau-posters-the-batman-filmes-7.jpg" alt="">
-                    <div class="titulo-filme"><p>O Batman</p></div>
-                </div>
-                <div class="poster-titulo">
-                    <img src="https://uauposters.com.br/media/catalog/product/2/5/259420220222-uau-posters-the-batman-filmes-7.jpg" alt="">
-                    <div class="titulo-filme"><p>O Batman</p></div>
-                </div>
-                <div class="ver"><p>Ver "Quero assistir"</p></div>
-            </div>
-        </div>
+        {% endfor %}
 
-        <div class="lista-filmes">
-            <div id="titulo-lista-filmes"><img src="/static/img/estrela.png" alt=""> <p>Piores</p></div>
-            <div id="poster-lista-filmes">
-                <div class="poster-titulo">
-                    <img src="https://br.web.img3.acsta.net/pictures/22/08/09/21/09/3949781.jpg" alt="">
-                    <div class="titulo-filme"><p>Continência ao amor</p></div>
-                </div>
-                <div class="poster-titulo">
-                    <img src="https://br.web.img3.acsta.net/pictures/22/08/09/21/09/3949781.jpg" alt="">
-                    <div class="titulo-filme"><p>Continência ao amor</p></div>
-                </div>
-                <div class="poster-titulo">
-                    <img src="https://br.web.img3.acsta.net/pictures/22/08/09/21/09/3949781.jpg" alt="">
-                    <div class="titulo-filme"><p>Continência ao amor</p></div>
-                </div>
-                <div class="poster-titulo">
-                    <img src="https://br.web.img3.acsta.net/pictures/22/08/09/21/09/3949781.jpg" alt="">
-                    <div class="titulo-filme"><p>Continência ao amor</p></div>
-                </div>
-                <div class="poster-titulo">
-                    <img src="https://br.web.img3.acsta.net/pictures/22/08/09/21/09/3949781.jpg" alt="">
-                    <div class="titulo-filme"><p>Continência ao amor</p></div>
-                </div>
-                <div class="ver"><p>Ver "Piores"</p></div>
-            </div>
-        </div>
+
     </article>
 
     <form class="container-nova-lista">

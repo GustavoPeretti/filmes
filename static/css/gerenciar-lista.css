@@ -183,6 +183,7 @@
 #lapis-editar {
     width: 1.5em;
     margin-left: 1em;
+    cursor: pointer;
 }
 
 .titulo-icone {
@@ -195,7 +196,8 @@
 }
 
 #poster-lista-filmes {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
   }
   

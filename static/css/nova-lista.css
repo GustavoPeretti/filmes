@@ -88,8 +88,9 @@ h1 {
 }
 
 #poster-lista-filmes {
-  display: flex;
+  display: grid;
   justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr);
   gap: 5em;
 }
 

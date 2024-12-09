@@ -173,6 +173,7 @@ body {
   align-items: center;
   display: flex;
   padding: 0.2em 2em 0.2em 1em;
+  cursor: pointer;
 }
 
 .nova-lista > img {
