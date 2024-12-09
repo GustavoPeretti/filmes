@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from ..database.db import db
 
 api = Blueprint('api', __name__)
@@ -14,11 +14,18 @@ def buscar_listas():
 
 @api.route('/lista/<int:id>', methods=['GET'])
 def buscar_lista(id):
-    return ''
+    try:
+        resultado = db.query('SELECT * FROM listas WHERE id = %s;', id)
+    except:
+        return jsonify({'status': False, 'mensagem': 'Não foi possível processar os dados.'}), 500
+    
+    return jsonify(resultado[0])
 
 @api.route('/lista', methods=['POST'])
 def cadastrar_lista():
-    return ''
+    dados = request.json
+
+    # if 'titulo' not in dados
 
 @api.route('/lista/<int:id>', methods=['UPDATE'])
 def atualizar_lista():

@@ -20,7 +20,9 @@ CREATE TABLE filmes (
 CREATE TABLE listas (
 	id INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(255) NOT NULL,
-    privado BOOLEAN DEFAULT false NOT NULL
+    privado BOOLEAN DEFAULT false NOT NULL,
+    usuario VARCHAR(255) NOT NULL,
+    FOREIGN KEY (usuario) REFERENCES usuarios (usuario) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE filmes_listas (

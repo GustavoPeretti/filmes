@@ -10,7 +10,6 @@ def home_handler():
 def lista():
     return render_template('nova-lista.html')
 
-
 @home.route('/lista/<int:id>')
 def gerenciar_lista(id):
     return render_template('gerenciar-lista.html')
