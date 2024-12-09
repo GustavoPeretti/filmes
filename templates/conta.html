@@ -4,11 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciar conta</title>
+    <link rel="stylesheet" href="/static/css/conta.css">
 </head>
 <body>
-    <div>
+    <div class="diagonal"></div>
+    <div class="container">
         <div>
-            <img src="https://i.pinimg.com/736x/a9/dd/80/a9dd804fbc37cd88768103e7cf657def.jpg" alt="">
+            <img src="https://i.pinimg.com/736x/a9/dd/80/a9dd804fbc37cd88768103e7cf657def.jpg" alt="" id="foto-perfil">
+            <div class="nome-lapis"><p id="nome">Jorge</p><img src="/static/img/lapis.png" alt="" id="lapis-editar"></div>
+        </div>
+        <form action="">
+            <input type="text" placeholder="jorgealbertomoreira@gmail.com" class="nome-da-lista" id="pesquisa-filmes">
+        </form>
+
+        <div class="gerenciar-email">
+            <p>Alterar e-mail</p>
+            <form action="">
+                <p>Novo e-mail</p>
+                <input type="text" placeholder="jorgealbertomoreira@gmail.com" class="nome-da-lista" id="pesquisa-filmes">
+                <div class="botao">
+                    <button>Salvar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="gerenciar-senha">
+            <p>Alterar senha</p>
+            <form action="">
+                <p>Nova senha</p>
+                <input type="text" placeholder="jorgealbertomoreira@gmail.com" class="nome-da-lista" id="pesquisa-filmes">
+            </form>
+
+            <form action="">
+                <p>Confirmar nova senha</p>
+                <input type="text" placeholder="jorgealbertomoreira@gmail.com" class="nome-da-lista" id="pesquisa-filmes">
+                <div class="botao">
+                    <button>Salvar</button>
+                </div>
+            </form>
+        </div>
+        <div class="botao">
+            <button>Salvar</button>
+            <button id="deletar"><img src="/static/img/lixeira.png" alt="" id="lixeira-deletar"> Deletar conta</button>
         </div>
     </div>
 </body>
