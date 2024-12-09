@@ -5,8 +5,8 @@ from email.mime.text import MIMEText
 
 class SMTPServer:
     def __init__(self, host, port, email, password):
-        self.host = host,
-        self.port = port,
+        self.host = host
+        self.port = port
         self.email = email
         self.password = password
         self.server = smtplib.SMTP(self.host, self.port)
@@ -16,7 +16,7 @@ class SMTPServer:
     
     def send_email(this, subject, content, email):
         message = MIMEMultipart()
-        message['From'] = os.environ.get()
+        message['From'] = this.email
         message['Subject'] = subject
         message.attach(MIMEText(content, 'html'))
         message['To'] = email

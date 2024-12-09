@@ -40,5 +40,5 @@ document.querySelector('.enviar').addEventListener('click', async (e) => {
         return;
     }
 
-    window.location.href = '/';
+    window.location.href = '/auth/verificar';
 });
